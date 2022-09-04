@@ -3,48 +3,30 @@ Title:To find trace of a matrix
 Date of creation:3-9-22
 Author: Sripriya R.M.
 */
-
-
-
 #include <stdio.h>
-
 int main()
 {
-		
-		int i, j, rows, columns, trace = 0;	
-		
-		printf("Enter Matrix Rows and Columns =  ");
-		scanf("%d %d", &rows, &columns);
-		
-		int Tra_arr[rows][columns];
-		
-		printf("Please Enter the Matrix Items =  \n");
-		i = 0; 
-		while(i < rows) 
+
+	int i, j, rows, columns, trace = 0;
+        printf("Enter Matrix Rows and Columns =");
+	scanf("%d %d", &rows, &columns);
+        int Tra_arr[rows][columns];
+        printf("Please Enter the Matrix Items =\n");
+	i = 0;
+	do
+	{
+		j = 0;
+		do
 		{
-			j = 0; 
-			while(j < columns) 
+			scanf("%d", &Tra_arr[i][j]);
+			if (i == j)
 			{
-				scanf("%d", &Tra_arr[i][j]);
-				j++;
-			}	
-			i++;
-		}
-		
-		i = 0; 
-		while(i < rows) 
-		{
-			j = 0; 
-			while(j < columns) 
-			{
-				if(i == j)
-				{
-					trace = trace + Tra_arr[i][j];
-				}
-				j++;
-			}	
-			i++;
-		}
-		
-		printf("The Trace Of the Matrix = %d\n", trace)
-                }
+				trace = trace + Tra_arr[i][j];
+			}
+		} while (++j < columns);
+	} while (++i < rows);
+
+	printf("The Trace Of the Matrix = %d\n", trace);
+}
+
+
